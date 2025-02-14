@@ -1,0 +1,9 @@
+﻿@model WebApplication3.Models.Author
+
+<tr>
+    <td>@Model.Name</td>
+    <td>
+        <a asp-action="Update" asp-route-id="@Model.AuthorId" class="btn btn-warning">Edit</a>
+        <a asp-action="Delete" asp-route-id="@Model.AuthorId" class="btn btn-danger">Delete</a>
+    </td>
+</tr>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication3.Models.Author>
+
+@{
+    ViewData["Title"] = "Authors";
+}
+
+<h2>Authors list</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            @await Html.PartialAsync("_AuthorPartial", author)
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">Add author</a>

@@ -1,0 +1,17 @@
+﻿@model Publisher
+
+@{
+    ViewData["Title"] = "Delete publisher";
+}
+
+<h2>Are you sure you want to delete the publisher?</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <form asp-action="Delete">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="PublisherId" />
+        <button type="submit" class="btn btn-danger">Yes</button>
+        <a asp-action="Index" class="btn btn-secondary">No</a>
+    </form>
+</div>

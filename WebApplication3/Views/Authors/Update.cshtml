@@ -1,0 +1,21 @@
+﻿@model WebApplication3.Models.Author
+
+@{
+    ViewData["Title"] = "Update author";
+}
+
+<h2>Edit author</h2>
+
+<form asp-action="Update" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="AuthorId" />
+
+    <div class="mb-3">
+        <label for="Name" class="form-label">Full name</label>
+        <input type="text" asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
